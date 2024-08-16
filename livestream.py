@@ -92,7 +92,6 @@ def activate_camera(video_address, num_of_blur, num_of_brighten, filter_enhance)
     cap.release()
 
 
-@st.cache_data
 def main_loop():
     st.title("OpenCV Application💕")
     st.subheader("This app allows you to play with Image filters!")
