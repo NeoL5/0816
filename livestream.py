@@ -24,6 +24,7 @@ def enhance_details(img):
     return hdr
 
 
+@st.cache_data
 def video_frame(original_frame, num_of_blur, num_of_brighten, filter_enhance):
     angle_threshold = 10  # 角度阈值，滤除接近水平的线条
     # 将frame转换为NumPy数组img，转换后包含(height, width, 3)
@@ -91,6 +92,7 @@ def activate_camera(video_address, num_of_blur, num_of_brighten, filter_enhance)
     cap.release()
 
 
+@st.cache_data
 def main_loop():
     st.title("OpenCV Application💕")
     st.subheader("This app allows you to play with Image filters!")
