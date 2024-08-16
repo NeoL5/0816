@@ -4,6 +4,7 @@
 import cv2
 import numpy as np
 import streamlit as st
+import uuid
 
 
 # 亮度
@@ -106,7 +107,9 @@ def main_loop():
     # 侧边栏复选框
     apply_enhancement_filter = st.sidebar.checkbox('Enhance Details')
 
-    if st.button('Confirm', key="unique_key"):
+    unique_key = str(uuid.uuid4())
+    
+    if st.button('Confirm', key=unique_key):
         if address is not None:
             activate_camera(address, blur_rate, brightness_amount, apply_enhancement_filter)
         else:
