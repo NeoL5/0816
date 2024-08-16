@@ -105,7 +105,7 @@ def main_loop():
     # 侧边栏复选框
     apply_enhancement_filter = st.sidebar.checkbox('Enhance Details')
 
-    while st.button('Confirm'):
+    while st.button('Confirm', key='example'):
         if address is not None:
             activate_camera(address, blur_rate, brightness_amount, apply_enhancement_filter)
         else:
